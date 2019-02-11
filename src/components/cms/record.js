@@ -52,7 +52,7 @@ class Record extends React.Component {
           uiSchema={uiSchema}
           formData={this.props.record}
           onChange={this.handleChange}
-          // onSubmit={this.handleSubmit}
+          onSubmit={this.handleSubmit}
           onError={this.handleError}
         />
       </When>
