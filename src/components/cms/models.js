@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import * as actions from "./actions.js";
+import '../../styles/main.scss';
+import '../../styles/main.scss';
 
 const styles = {
   clickable: { cursor: "pointer" },
@@ -32,7 +34,7 @@ class Models extends React.Component {
 
   render() {
     return (
-      <ul>
+      <ul className="main-tags">
         {this.props.models &&
           this.props.models.map((model, i) => (
             <li
@@ -50,8 +52,6 @@ class Models extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state, 'her');
-
   return {
     models: state.records.models
   }

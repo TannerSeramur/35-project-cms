@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Form from "react-jsonschema-form";
 import { When } from "../if";
+import Auth from '../auth/auth.js';
 
 import * as actions from "./actions.js";
 
@@ -47,14 +48,15 @@ class Record extends React.Component {
   render() {
     return (
       <When condition={this.props.schemas[this.props.model]}>
-        <Form
+        <Auth capability="update"><Form
+          className='main-form'
           schema={this.props.schemas[this.props.model] || {}}
           uiSchema={uiSchema}
           formData={this.props.record}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
           onError={this.handleError}
-        />
+        /></Auth>
       </When>
     );
   }

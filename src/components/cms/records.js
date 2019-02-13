@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import Auth from '../auth/auth.js';
 
 import { When } from "../if";
 
 import * as actions from "./actions.js";
+
+import '../../styles/main.scss';
 
 const styles = {
   clickable: { cursor: "pointer" },
@@ -31,7 +34,7 @@ class Records extends React.Component {
   render() {
     return (
       <When condition={this.props.model}>
-        <ul>
+        <ul className='records-ul'>
           {this.props.records.map((record, i) => (
             <li key={record._id}>
               <span
@@ -40,16 +43,17 @@ class Records extends React.Component {
               >
                 {record.name}
               </span>
-              <span
-                style={styles.delete}
-                onClick={() => this.deleteRecord(record._id)}
-              >
-                x
+              <Auth capability="delete">
+                <span
+                  style={styles.delete}
+                  onClick={() => this.deleteRecord(record._id)}
+                >
+                  x
               </span>
+              </Auth>
             </li>
           ))}
         </ul>
-        <button onClick={this.props.clearRecord}>+</button>
       </When>
     );
   }

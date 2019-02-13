@@ -8,7 +8,7 @@
     "@material-ui/core": "^3.9.2",
     "dotenv": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
-    "react": "16.8.1",
+    "react": "16.6.3",
     "react-dom": "16.8.1",
     "react-jsonschema-form": "1.2.1",
     "react-redux": "6.0.0",
@@ -18,7 +18,9 @@
     "redux-devtools-extension": "2.13.8",
     "redux-thunk": "2.3.0",
     "superagent": "4.1.0",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "jsonwebtoken": "8.4.0",
+    "react-cookies": "latest"
   },
   "devDependencies": {},
   "scripts": {
